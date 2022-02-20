@@ -1,0 +1,28 @@
+body {
+  background-color: #222222;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #a8a8a8;
+  padding: 0;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+textarea {
+  padding: 4px;
+  max-width: 100%;
+  font-size: 18pt;
+  font-weight: bold;
+  border: solid 2px #a8a8a8 ;
+  background-color: #222222;
+  color: #a8a8a8;
+}

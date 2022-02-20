@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" charset="utf-8">
+
+<head>
+    <title>Scales for Chromatic Harmonica - Help file</title>
+
+    <link rel="stylesheet" href="shared.css">
+    <style>
+    </style>
+    <style>
+        table tr td {
+            border: 1px solid #a8a8a8;
+            border-collapse: collapse;
+            font-size: 12pt;
+            padding: 12px;
+        }
+
+        .item {
+            width: 25%;
+        }
+    </style>
+
+    <script src="shared.js"></script>
+    <script src="scales.js"></script>
+
+    <script>
+    </script>
+
+</head>
+
+<body>
+    <div id="column1">
+        <script>
+            var config = "";
+            config = config + '<h1 class="centerText">'
+                + document.title
+                + "</h1>"
+                + header;
+            // console.log(config);
+            document.getElementById('column1').innerHTML = config;
+        </script>
+    </div>
+    <br>
+    <div width="100%" class="center">
+        <table>
+            <tr>
+                <td colspan="2" style="background-color:black; font-size: 22pt;">
+                    Abstract
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background-color:black; font-size: 22pt;text-align: center;">
+                    <img src="ui1.png" alt="UI"></img>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Note with accidental on staff or ledger lines. Staff is for the treble clef.
+                </td>
+                <td>
+                    Tab below staff and ledger lines example (+3*s):
+                    <ul>
+                        <li> + = blow or - = draw,</li>
+                        <li> number = hole and * = holes 1-4 of 16 hole
+                            harmonica,</li>
+                        <li> s = slide in.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td colspan="3" style="background-color:black; font-size: 16pt;text-align: center;">
+                    <img src="ui2.png" alt="UI"></img>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:black; font-size: 16pt;">
+                    Item
+                </td>
+                <td style="background-color:black; font-size: 16pt;">
+                    Default
+                </td>
+                <td style="background-color:black; font-size: 16pt;">
+                    Option list
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Scales
+                </td>
+
+                <td>
+                    Chromatic
+                </td>
+                <td id="scales">
+                    <script>
+                        var a = scaleNames.slice(0, scaleNames.length).join(",   ");
+                        document.getElementById("scales").innerHTML = a.replaceAll("s", "#");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lowest note of Scale.
+                </td>
+
+                <td>
+                    C3
+                </td>
+                <td rowspan=2 id="notes">
+                    <script>
+                        document.getElementById("notes").innerHTML = chromScale.slice(1, chromScale.length).join(",   ");
+                    </script>
+                    <br>(Notes below the lowest and those above the highest will be omitted from the selected scale)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Highest note of Scale.
+                </td>
+                <td>
+                    D7
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Direction of Scale
+                </td>
+                <td>
+                    UP
+                </td>
+                <td>
+                    Up , Down , Up / Down , Down / Up , Random
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Step within Scale
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    Range 1 - 12 with increment of 1. One octave between notes will be seen with a 12.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Note Volume
+                </td>
+                <td>
+                    0.5
+                </td>
+                <td>
+                    Range of 0.0 - 1.0 with increment of 0.05.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Note Duration
+                </td>
+                <td>
+                    1.0 sec
+                </td>
+                <td>
+                    Range of 0.0 - 8.0 sec with increment of 0.05 sec. Value greater than 4.0 will contain 4 sec of
+                    sound followed by up to 4 sec of quiet.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color:black; font-size: 16pt;">
+                    Buttons
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    OK
+                </td>
+                <td colspan="2">
+                    Execute a single pass through the selected scale.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LOOP
+                </td>
+                <td colspan="2">
+                    Execute multiple continuous passes through the selected scale. STOP must be used to stop the
+                    execution.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    RESET
+                </td>
+                <td colspan="2">
+                    Because the user parameters are "sticky", you must either RESET them or reload the page to get the
+                    default values.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    STOP
+                </td>
+                <td colspan="2">
+                    Cease execution of the scale.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    HELP
+                </td>
+                <td colspan="2">
+                    Open this document.
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color:black; font-size: 16pt;">
+                    Error info
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Error
+                </td>
+                <td colspan="2">
+                    Error message in red text.
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
